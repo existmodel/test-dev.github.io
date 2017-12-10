@@ -1,0 +1,18 @@
+.main-nav__list {
+  @include list-reset;
+  display: flex;
+
+}
+
+.main-nav__link {
+  font-family: "Open Sans", "Arial", serif;
+  color: $white;
+  font-size: 13px;
+  text-transform: uppercase;
+
+  &:hover {
+  }
+
+  &:active {
+  }
+}

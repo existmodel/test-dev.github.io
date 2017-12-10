@@ -1,0 +1,18 @@
+.page-footer___wrapper {
+  @include center;
+}
+
+.page-footer {
+  background-color: $greyee;
+}
+
+.page-footer__btn {
+  background-color: $greyd2;
+}
+
+.page-footer__title {
+  font-size: 18px;
+  font-weight: bold;
+  color: $darkgrey;
+  text-transform: uppercase;
+}

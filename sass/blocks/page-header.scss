@@ -1,0 +1,27 @@
+.page-header {
+  color: $white;
+  background-color: $green;
+}
+
+.page-header__wrapper {
+  @include center;
+}
+
+.page-header__title {
+  font-family: "Ubuntu", "Arial", serif;
+  font-size: 53px;
+  text-transform: uppercase;
+}
+
+.page-header__second-title {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.page-header__link {
+  font-size: 15px;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
