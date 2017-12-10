@@ -1,27 +1,45 @@
 .page-header {
   color: $white;
   background-color: $green;
+  // height: 100vh;
+  background-image: url("../img/header_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
 }
 
 .page-header__wrapper {
   @include center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 120px;
 }
 
 .page-header__title {
   font-family: "Ubuntu", "Arial", serif;
   font-size: 53px;
   text-transform: uppercase;
+  margin-top: 80px;
+  margin-bottom: 0;
+  // margin: auto;
 }
 
 .page-header__second-title {
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 0;
 }
 
-.page-header__link {
+.page-header__button {
   font-size: 15px;
-  color: $white;
+  // color: $white;
   text-transform: uppercase;
   font-weight: bold;
+  margin-top: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
 }

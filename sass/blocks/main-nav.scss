@@ -1,3 +1,7 @@
+.main-nav {
+  margin-top: 50px;
+}
+
 .main-nav__list {
   @include list-reset;
   display: flex;
@@ -11,8 +15,15 @@
   text-transform: uppercase;
 
   &:hover {
+    color: $green50;
   }
 
   &:active {
+    opacity: 0.5;
   }
+}
+
+.main-nav__item:not(:last-child) {
+  padding-right: 40px;
+
 }

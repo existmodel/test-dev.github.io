@@ -1,13 +1,17 @@
+.page-footer {
+  background-color: $greyee;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
 .page-footer___wrapper {
   @include center;
 }
 
-.page-footer {
-  background-color: $greyee;
-}
-
 .page-footer__btn {
+  display: inline-block;
   background-color: $greyd2;
+  margin-top: 50px;
 }
 
 .page-footer__title {
@@ -15,4 +19,11 @@
   font-weight: bold;
   color: $darkgrey;
   text-transform: uppercase;
+  padding-left: 40px;
+  margin: 0;
+}
+
+.page-footer__text {
+  margin-top: 50px;
+  margin-bottom: 0;
 }

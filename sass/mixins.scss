@@ -26,6 +26,8 @@
 // }
 
 @mixin center {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
 } 

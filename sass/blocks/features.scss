@@ -1,8 +1,14 @@
 .features {
+  background-color: $greyee;
+  padding-top: 120px;
+  padding-bottom: 70px;
 }
 
 .features__wrapper {
   @include center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .features__title {
@@ -10,8 +16,16 @@
   font-weight: bold;
   text-transform: uppercase;
   color: $darkgrey;
+  text-align: center;
 }
 
 .features__description {
   text-align: center;
 }
+
+.features__item {
+  width: 190px;
+}
+// .features__item:not(:last-child) {
+//   padding-right: 10px;
+// }
