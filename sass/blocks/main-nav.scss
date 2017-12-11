@@ -1,11 +1,10 @@
 .main-nav {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .main-nav__list {
   @include list-reset;
   display: flex;
-
 }
 
 .main-nav__link {
@@ -25,5 +24,10 @@
 
 .main-nav__item:not(:last-child) {
   padding-right: 40px;
+}
 
+@media (max-width: 590px) {
+  .main-nav__item:not(:last-child) {
+    padding-right: 20px;
+  }
 }

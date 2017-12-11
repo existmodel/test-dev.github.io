@@ -1,29 +1,9 @@
-@mixin title {
-
-}
-
-@mixin title-mobile {
-  font-size: 30px;
-  line-height: 40px;
-}
 
 @mixin list-reset {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-
-// @mixin decorate {
-//   content: "";
-//   position: absolute;
-//   margin: auto;
-//   background: transparent url("../img/decoration.png") no-repeat;
-//   width: 253px;
-//   height: 33px;
-//   left: 0; 
-//   right: 0;
-//   bottom: -55px;
-// }
 
 @mixin center {
   max-width: 600px;

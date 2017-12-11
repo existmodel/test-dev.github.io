@@ -1,6 +1,6 @@
 .page-footer {
   background-color: $greyee;
-  padding-top: 70px;
+  padding-top: 60px;
   padding-bottom: 70px;
 }
 
@@ -11,7 +11,11 @@
 .page-footer__btn {
   display: inline-block;
   background-color: $greyd2;
-  margin-top: 50px;
+  margin-top: 30px;
+
+  &:hover {
+    background-color: $green50;
+  }
 }
 
 .page-footer__title {
@@ -21,9 +25,47 @@
   text-transform: uppercase;
   padding-left: 40px;
   margin: 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: transparent url("../img/lifebuoy.png") no-repeat;
+    width: 24px;
+    height: 23px;
+    left: 0; 
+    top: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 2px;
+    left: 0; 
+    top: 40px;
+    background-image: linear-gradient(to right,$greye2, $greyee);
+  }
 }
 
 .page-footer__text {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 0;
+}
+
+@media (max-width: 590px) {
+
+  .page-footer___wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .page-footer__title {
+    padding-left: 25px;
+  }
+
+  .page-footer {
+    padding-bottom: 50px;
+  }
 }

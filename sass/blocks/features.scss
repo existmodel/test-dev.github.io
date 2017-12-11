@@ -8,7 +8,7 @@
   @include center;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 }
 
 .features__title {
@@ -17,15 +17,74 @@
   text-transform: uppercase;
   color: $darkgrey;
   text-align: center;
+  margin: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    width: 135px;
+    height: 2px;
+    left: 0; 
+    top: 35px;
+    right: 0;
+    background-color: $greye2;
+  }
 }
 
 .features__description {
   text-align: center;
+  margin-top: 35px;
+  margin-bottom: 0;
 }
 
 .features__item {
   width: 190px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    background: transparent url("../img/user-group.png") no-repeat;
+    width: 43px;
+    height: 31px;
+    left: 0; 
+    top: -60px;
+    right: 0;
+  }
 }
-// .features__item:not(:last-child) {
-//   padding-right: 10px;
-// }
+
+.features__item--add-heart {
+  &::before {
+    background: transparent url("../img/heart.png") no-repeat;
+    width: 38px;
+    height: 35px;
+    top: -65px;
+  }
+}
+
+.features__item--add-headset {
+  &::before {
+    background: transparent url("../img/headset.png") no-repeat;
+    width: 39px;
+    height: 42px;
+    top: -70px;
+  }
+} 
+
+@media (max-width: 590px) {
+  .features__wrapper {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features__item {
+    margin-bottom: 85px;
+  }
+
+  .features {
+    padding-bottom: 0;
+  }
+}
