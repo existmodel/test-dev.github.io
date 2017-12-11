@@ -1,36 +1,36 @@
 "use strict";
 
-const gulp = require('gulp');
-const uglify = require('gulp-uglify');
+const gulp = require("gulp");
+const uglify = require("gulp-uglify");
 var notify = require("gulp-notify");
-const jshint = require('gulp-jshint');
-const plumber = require('gulp-plumber');
-const concat = require('gulp-concat');
-const autoprefixer = require('gulp-autoprefixer');
+const jshint = require("gulp-jshint");
+const plumber = require("gulp-plumber");
+const concat = require("gulp-concat");
+const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
-const postcss = require('gulp-postcss');
-const sass = require('gulp-sass');
-const watch = require('gulp-watch');
-const minify = require('gulp-minify');
+const postcss = require("gulp-postcss");
+const sass = require("gulp-sass");
+const watch = require("gulp-watch");
+const minify = require("gulp-minify");
 // const browserSync = require('browser-sync');
 
-const browserSync = require('browser-sync').create();
+const browserSync = require("browser-sync").create();
 // const reload      = browserSync.reload;
 
 
-const imagemin = require('gulp-imagemin');
-var csslint = require('gulp-csslint');
-const del = require('del');
+const imagemin = require("gulp-imagemin");
+var csslint = require("gulp-csslint");
+const del = require("del");
 var run = require("run-sequence");
-var sourcemaps = require('gulp-sourcemaps');
-var cssmin = require('gulp-cssmin');
-var gulpIf = require('gulp-if');
-var bower = require('gulp-bower');
-var spritesmith = require('gulp.spritesmith');
+var sourcemaps = require("gulp-sourcemaps");
+var cssmin = require("gulp-cssmin");
+var gulpIf = require("gulp-if");
+var bower = require("gulp-bower");
+var spritesmith = require("gulp.spritesmith");
 
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
-gulp.task('scriptsLibs', function () {
+gulp.task("scriptsLibs", function () {
   return gulp.src([
     "libs/jquery/dist/jquery.min.js",
     "libs/magnific-popup/dist/jquery.magnific-popup.min.js"
@@ -40,13 +40,13 @@ gulp.task('scriptsLibs', function () {
   .pipe(gulp.dest("js"));
 });
 
-gulp.task('scripts', function () {
-  return gulp.src('js/script.js')
+gulp.task("scripts", function () {
+  return gulp.src("js/script.js")
     .pipe(jshint())
-    .pipe(jshint.reporter('default'))
+    .pipe(jshint.reporter("default"))
     .pipe(uglify())
     .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest('js'));
+    .pipe(gulp.dest("js"));
 });
 
 gulp.task("style", function() {
@@ -54,7 +54,7 @@ gulp.task("style", function() {
     .pipe(plumber({
       errorHandler: notify.onError(function (err) {
         return {
-          title: 'Error',
+          title: "Error",
           message: err.message
         };
       })
@@ -74,22 +74,22 @@ gulp.task("style", function() {
 //   // script:['js/*.js']
 // };
 
-gulp.task('mincss', function(){
-  return gulp.src('css/style.css')
+gulp.task("mincss", function(){
+  return gulp.src("css/style.css")
     .pipe(gulp.dest("css"))
     .pipe(cssmin())
     .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest("css"));
     // .pipe(reload({stream:true}));
 });
 
-gulp.task('mincssLibs', function(){
-  return gulp.src('sass/libs.scss')
+gulp.task("mincssLibs", function(){
+  return gulp.src("sass/libs.scss")
     .pipe(sass())
     .pipe(gulp.dest("css"))
     .pipe(cssmin())
     .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest("css"));
     // .pipe(reload({stream:true}));
 });
 
@@ -168,7 +168,7 @@ gulp.task("minfiles", function(done) {
 
 // new browserSync
 
-gulp.task('browserSync', function () {
+gulp.task("browserSync", function () {
   browserSync.init({
     server: 
     {baseDir: "./"},
@@ -181,25 +181,25 @@ gulp.task('browserSync', function () {
   // gulp.watch("sass/**/*.{scss,sass}", ["style"])
 })
 
-gulp.task('watcher', ["scriptsLibs"], function(){
-  gulp.watch("sass/**/*.{scss,sass}", ["style"]).on('change', browserSync.reload);
+gulp.task("watcher", ["scriptsLibs"], function(){
+  gulp.watch("sass/**/*.{scss,sass}", ["style"]).on("change", browserSync.reload);
   // gulp.watch("*.html").on("change", browserSync.reload);
   gulp.watch("js/**/*.js", ["scripts"]).on("change", browserSync.reload);
   // gulp.watch("sass/**/*.{scss,sass}", ["style"]).on('change', browserSync.reload);
   gulp.watch("*.html", browserSync.reload);
 });
 
-gulp.task('serve', ['watcher', 'browserSync']);
+gulp.task("serve", ["watcher", "browserSync"]);
 
-gulp.task('sprite', function() {
+gulp.task("sprite", function() {
     var spriteData = 
-        gulp.src('img/sprite/*.*')
+        gulp.src("img/sprite/*.*")
             .pipe(spritesmith({
-                imgName: 'sprite.png',
-                cssName: 'sprite.css',
+                imgName: "sprite.png",
+                cssName: "sprite.css",
                 padding: 20
             }));
 
-    spriteData.img.pipe(gulp.dest('sprite/img'));
-    spriteData.css.pipe(gulp.dest('sprite/style'));
+    spriteData.img.pipe(gulp.dest("sprite/img"));
+    spriteData.css.pipe(gulp.dest("sprite/style"));
 });
