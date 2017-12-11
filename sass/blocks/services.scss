@@ -8,7 +8,6 @@
   @include center;
   display: flex;
   justify-content: space-between;
-  // flex-wrap: wrap;
 }
 
 .services__title {
@@ -18,18 +17,6 @@
   text-transform: uppercase;
   margin-top: 35px;
   margin-bottom: 0;
-  // position: relative;
-
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   margin: auto;
-  //   width: 265px;
-  //   height: 2px;
-  //   left: 0; 
-  //   top: 40px;
-  //   background-image: linear-gradient(to right,$greye2, $greyee);
-  // }
 }
 
 .services__btn {
@@ -69,7 +56,6 @@
     padding-bottom: 0;
   }
   .services__wrapper  {
-    // justify-content: center;
     flex-direction: column;
     align-items: center;
   }
